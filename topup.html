@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu TopUp</title>
+  <link rel="stylesheet" href="topup.css">
+</head>
+<body class="gradient-bg">
+<nav class="navbar">
+  <ul>
+    <li><a href="Menu Utama.html">🏠 Home</a></li>
+    <li><a href="topup.html">💎 Menu TopUp</a></li>
+<li> <a href="keranjang.html" class="cart-link">🛒 Keranjang <span id="cart-count">0</span></a></li>
+<li>
+  <input type="text" id="searchInput" class="search-bar" placeholder="🔍 Cari game...">
+</li>
+  </ul>
+</nav>
+
+  <header>
+    <h1>Menu TopUp</h1>
+  </header>
+
+<div class="container">
+  <!-- Mobile Legend -->
+  <div class="product">
+    <img src="https://www.nesabamedia.com/apps/wp-content/uploads/2024/03/Mobile-Legends-Bang-Bang-VNG-Logo.png" alt="Mobile Legend">
+    <h2>Mobile Legend</h2>
+    <div class="input-group">
+      <label for="ml-id">ID Akun:</label>
+      <input type="text" id="ml-id" placeholder="Masukkan ID akun..." required>
+    </div>
+    <div class="input-group">
+      <label for="ml-server">Server:</label>
+      <input type="text" id="ml-server" placeholder="Masukkan Server..." required>
+    </div>
+    <h3>Pilih Nominal:</h3>
+    <div class="nominal-options">
+      <div class="nominal-card" onclick="selectNominal('Mobile Legend',20000,'86 Diamonds')">86 Diamonds<br><span>Rp20.000</span></div>
+      <div class="nominal-card" onclick="selectNominal('Mobile Legend',40000,'172 Diamonds')">172 Diamonds<br><span>Rp40.000</span></div>
+      <div class="nominal-card" onclick="selectNominal('Mobile Legend',80000,'344 Diamonds')">344 Diamonds<br><span>Rp80.000</span></div>
+    </div>
+    <button class="buy-btn" onclick="addTopup('Mobile Legend')">🛒 Tambah ke Keranjang</button>
+  </div>
+
+  <!-- Free Fire -->
+  <div class="product">
+    <img src="https://tse2.mm.bing.net/th/id/OIP.OxxpOxTfDKAmM2Hg88bcWwHaFj?cb=defcachec2&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Free Fire">
+    <h2>Free Fire</h2>
+    <div class="input-group">
+      <label for="ff-id">ID Akun:</label>
+      <input type="text" id="ff-id" placeholder="Masukkan ID akun..." required>
+    </div>
+    <div class="input-group">
+      <label for="ff-server">Server:</label>
+      <input type="text" id="ff-server" placeholder="Masukkan Server..." required>
+    </div>
+    <h3>Pilih Nominal:</h3>
+    <div class="nominal-options">
+      <div class="nominal-card" onclick="selectNominal('Free Fire',15000,'100 Diamonds')">100 Diamonds<br><span>Rp15.000</span></div>
+      <div class="nominal-card" onclick="selectNominal('Free Fire',30000,'210 Diamonds')">210 Diamonds<br><span>Rp30.000</span></div>
+      <div class="nominal-card" onclick="selectNominal('Free Fire',75000,'530 Diamonds')">530 Diamonds<br><span>Rp75.000</span></div>
+    </div>
+    <button class="buy-btn" onclick="addTopup('Free Fire')">🛒 Tambah ke Keranjang</button>
+  </div>
+
+  <!-- Genshin Impact -->
+  <div class="product">
+    <img src="https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/da/67/92/da6792ef-b50e-5c4b-7361-5227e659f331/AppIcon-1x_U007emarketing-0-6-0-0-85-220.png/1024x1024bb.png" alt="Genshin Impact">
+    <h2>Genshin Impact</h2>
+    <div class="input-group">
+      <label for="gi-id">UID:</label>
+      <input type="text" id="gi-id" placeholder="Masukkan UID..." required>
+    </div>
+    <div class="input-group">
+      <label for="gi-server">Server:</label>
+      <select id="gi-server">
+        <option value="Asia">Asia</option>
+        <option value="America">America</option>
+        <option value="Europe">Europe</option>
+        <option value="TW/HK/MO">TW/HK/MO</option>
+      </select>
+    </div>
+    <h3>Pilih Nominal:</h3>
+    <div class="nominal-options">
+      <div class="nominal-card" onclick="selectNominal('Genshin Impact',30000,'60 Genesis Crystals')">60 Genesis Crystals<br><span>Rp30.000</span></div>
+      <div class="nominal-card" onclick="selectNominal('Genshin Impact',150000,'300+30 Genesis Crystals')">300+30 Genesis Crystals<br><span>Rp150.000</span></div>
+      <div class="nominal-card" onclick="selectNominal('Genshin Impact',300000,'980+110 Genesis Crystals')">980+110 Genesis Crystals<br><span>Rp300.000</span></div>
+    </div>
+    <button class="buy-btn" onclick="addTopup('Genshin Impact')">🛒 Tambah ke Keranjang</button>
+  </div>
+</div>
+  <footer>
+    <p>© 2026 Toko Online KyaaaStore</p>
+  </footer>
+
+  <div id="popup" class="popup">
+    <div class="popup-box">
+      <p id="popup-text"></p>
+      <button onclick="tutupPopup()">OK</button> 
+    </div>
+  </div>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Keranjang Belanja</title>
+  <link rel="stylesheet" href="keranjang.css">
+</head>
+
+<body class="gradient-bg">
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="Menu Utama.html">🏠 Home</a></li>
+      <li><a href="topup.html">💎 Menu TopUp</a></li>
+      <li> <a href="keranjang.html" class="cart-link">  🛒 Keranjang <span id="cart-count">0</span></a></li> 
+    </ul>
+  </nav>
+
+  <header>
+    <h1>Keranjang Belanja</h1>
+  </header>
+
+  <p id="empty-cart-text">Keranjang masih kosong 🥲</p>
+
+  <div class="cart" id="cart-container">
+    <h2>Produk dalam Keranjang</h2>
+
+     
+    <ul id="cart-items"></ul>
+
+    <p>Total: <span id="cart-total">Rp0</span></p>
+
+    <div class="payment-methods">
+
+      <!-- DANA -->
+      <label class="pay-option">
+        <img src="dana.png" alt="Dana">
+        <input type="radio" name="payment" value="Dana" class="pay-radio">
+        DANA
+      </label>
+
+      <!-- GOPAY -->
+      <label class="pay-option">
+        <img src="gopay.png" alt="GoPay">
+        <input type="radio" name="payment" value="Gopay" class="pay-radio">
+        GoPay
+      </label>
+
+      <!-- QRIS -->
+      <label class="pay-option">
+        <img src="qris.png" alt="QRIS">
+        <input type="radio" name="payment" value="Qris" class="pay-radio">
+        QRIS
+      </label>
+
+        <!-- QRIS SECTION (SUDAH DIPINDAH KE SINI) -->
+<div id="qris-section" style="display:none;">
+  <h3>Kode QR Pembayaran</h3>
+
+  <div id="qris-box">
+      <div id="qris-code"></div>
+  </div>
+
+  <p>Scan QR menggunakan aplikasi pembayaran Anda.</p>
+</div>
+
+      <!-- INPUT SECTION -->
+        <div id="input-section" style="display:none; margin-top:20px;">
+
+        <p id="info-transfer">Transfer ke nomor berikut</p>
+
+        <div class="transfer-box">
+         <span id="nomor-tujuan">0895-3212-93274</span>
+          <button class="copy-btn" onclick="copyNomor()">Copy</button>
+        </div> 
+
+        
+        <button class="buy-btn" id="checkout">Checkout</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- STRUK PEMBELIAN -->
+  <div class="color" id="struk-container" style="display:none;">
+    <div id="struk-box">
+
+      <h2>Struk Pembelian</h2>
+      <p class="color" id="struk-date"></p>
+      <p class="color" id="struk-nama"></p>
+
+      <div class="color" id="struk-items"></div>
+
+      <p class="color" id="struk-total"></p>
+
+      <p class="color" id="struk-payment"></p>
+      <p class="color" id="struk-number"></p>
+      <p class="color" id="struk-bank"></p>
+
+      <button id="close-btn" onclick="closeReceipt()">Tutup</button>
+
+    </div>
+  </div>
+
+  <!-- POPUP -->
+  <div id="popup" class="popup">
+    <div class="popup-box">
+      <p id="popup-text"></p>
+      <button onclick="tutupPopup()">OK</button>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2026 Toko Online KyaaaStore</p>
+  </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script> 
+<script src="script.js"></script>
+</body>
+</html>

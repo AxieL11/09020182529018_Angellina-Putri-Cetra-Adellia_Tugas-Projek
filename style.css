@@ -1,0 +1,677 @@
+/* Global */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&family=Exo+2:wght@400;600;700&display=swap');
+
+body.gradient-bg {
+  font-family: 'Segoe UI', Arial, sans-serif;
+
+  /* 🔥 DARK FUTURISTIC BASE */
+  background: radial-gradient(circle at 20% 30%, #1a0033, transparent 40%),
+              radial-gradient(circle at 80% 70%, #001a33, transparent 40%),
+              linear-gradient(135deg, #050510, #0a0a1a, #050510);
+
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+body.gradient-bg::before {
+  content: "";
+  position: fixed;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+
+  background: radial-gradient(circle, rgba(255, 79, 163, 0.15), transparent 60%),
+              radial-gradient(circle, rgba(0, 224, 255, 0.15), transparent 60%);
+
+  animation: moveGlow 12s linear infinite;
+  z-index: 0;
+}
+
+@keyframes moveGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+
+header {
+  background: linear-gradient(135deg, #ff99cc, #ff66b2);
+  color: white;
+  text-align: center;
+  padding: 20px;
+  animation: slideDown 1s ease-in-out;
+}
+
+footer {
+  background: linear-gradient(135deg, #ff99cc, #ff66b2);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 30px;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 14.5px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.25);
+  box-shadow: 0 -3px 12px rgba(255, 120, 180, 0.25);
+}
+
+h1, h2, .title, .header-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+h3, h4, .subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}
+
+p, .description {
+    font-weight: 400;
+}
+
+/* Container */
+.container {
+   display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+
+  margin: 50px auto;
+  padding: 20px;
+
+  background: rgba(255,255,255,0.02);
+  border-radius: 20px;
+
+  backdrop-filter: blur(10px);
+}
+.product:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.9),
+    0 0 25px rgba(255,79,163,0.3);
+}
+
+.product:hover::after {
+  opacity: 1;
+}
+.product img {
+  width: 100%;
+  height: 170px;
+  border-radius: 12px;
+  object-fit: cover;
+  transition: 0.4s;
+}
+
+.product.hide {
+  display: none;
+}
+
+.product:hover img {
+  transform: scale(1.08);
+  filter: brightness(1.1);
+}
+
+.product h2 {
+  margin-top: 12px;
+  font-size: 20px;
+  color: #ff66b2;
+  text-shadow: 0 0 10px rgba(255,102,178,0.6);
+}
+
+.product h3 {
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255,255,255,0.6);
+}
+
+.product input,
+.product select {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+}
+
+/* Card Produk */
+/* ===== CARD PRODUK ===== */
+.card {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  border-radius: 18px;
+  overflow: hidden;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+
+  padding: 20px;
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.4),
+    0 0 15px rgba(255, 79, 163, 0.15);
+
+  transition: 0.35s ease;
+}
+
+/* GAMBAR */
+.card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 10px;
+
+  transition: 0.3s;
+}
+
+/* JUDUL */
+.card h3 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+  color: white;
+}
+
+/* DESKRIPSI */
+.card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+}
+
+/* HARGA / CTA */
+.card .price {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff4fa3;
+}
+
+/* 🔥 HOVER EFFECT */
+.card:hover {
+  transform: translateY(-8px) scale(1.03);
+
+  box-shadow:
+    0 15px 40px rgba(0,0,0,0.6),
+    0 0 25px rgba(255, 79, 163, 0.4);
+}
+
+/* GAMBAR IKUT NAIK */
+.card:hover img {
+  transform: scale(1.1) rotate(3deg);
+}
+
+/* ✨ GLOW BORDER ANIMASI */
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 18px;
+  padding: 2px;
+
+  background: linear-gradient(120deg, #ff4fa3, #6b4cff, #ff4fa3);
+  background-size: 200% 200%;
+
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: 0.4s;
+}
+
+/* muncul saat hover */
+.card:hover::before {
+  opacity: 1;
+  animation: borderMove 3s linear infinite;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Produk Detail */
+.product {
+  margin: 30px auto;
+  max-width: 700px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  padding: 25px;
+  animation: fadeUp 1s ease-in-out;
+  text-align: center;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.product img:hover {
+  transform: scale(1.05);
+}
+
+.product h2 {
+  margin: 15px 0;
+  color: #333;
+}
+
+.product p {
+  color: #555;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+a.back {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #ff66b2;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+a.back:hover {
+  background: #e91e63;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity:0;}
+  to {opacity:1;}
+}
+
+@keyframes slideDown {
+  from {transform:translateY(-50px); opacity:0;}
+  to {transform:translateY(0); opacity:1;}
+}
+
+@keyframes pulse {
+  0% {transform:scale(1);}
+  50% {transform:scale(1.1);}
+  100% {transform:scale(1);}
+}
+
+@keyframes ripple-effect {
+  to { transform: scale(4); opacity: 0; }
+}
+
+.buy-btn, .back {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+.navbar {
+ position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 50px;
+
+  /* 🔥 Gradient gelap elegan */
+  background: linear-gradient(
+    135deg,
+    rgba(20, 20, 35, 0.85),
+    rgba(30, 10, 50, 0.85),
+    rgba(10, 10, 20, 0.9)
+  );
+
+  /* 💎 Glass effect */
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  /* ✨ Border glow tipis */
+  border-bottom: 1px solid rgba(255, 79, 163, 0.25);
+
+  /* 🔥 Shadow neon halus */
+  box-shadow: 
+    0 4px 20px rgba(0,0,0,0.5),
+    0 0 15px rgba(255, 79, 163, 0.15);
+
+  z-index: 1000;
+
+  /* animasi muncul */
+  animation: navbarFade 0.8s ease;
+}
+
+/* animasi muncul halus */
+@keyframes navbarFade {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+
+.navbar a {
+  color: #aaa;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* hover glow */
+.navbar a:hover {
+  color: #ff4fa3;
+  text-shadow: 0 0 10px #ff4fa3;
+}
+
+/* underline animation */
+.navbar a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: #ff4fa3;
+   transition: 0.3s;
+}
+
+.navbar a:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+
+.hero {
+  background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/12cbe8a4-f55c-4b40-85bb-d8e1405e7b84/dbaa3uh-44369609-c249-40aa-b39a-eef4f9995468.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzEyY2JlOGE0LWY1NWMtNGI0MC04NWJiLWQ4ZTE0MDVlN2I4NFwvZGJhYTN1aC00NDM2OTYwOS1jMjQ5LTQwYWEtYjM5YS1lZWY0Zjk5OTU0NjguZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.Qxy9z24joxn9ebFgDDhrUDq2WGR6gM9oLlj49pgbKog') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 100px 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 42px;
+  margin-bottom: 15px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero p {
+  font-family: 'Exo 2', sans-serif;
+  font-size: 18px;
+  margin-bottom: 25px;
+  animation: slideDown 1.5s ease-in-out;
+}
+
+/* Promo Banner */
+.promo {
+  background: #ffe6f0;
+  text-align: center;
+  padding: 30px;
+  margin: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.promo h2 {
+  color: #e91e63;
+  margin-bottom: 10px;
+  animation: pulse 2s infinite;
+}
+
+/* ===== TENTANG SECTION ===== */
+.tentang {
+  display: flex;
+  justify-content: center;
+  margin: 80px 20px;
+}
+
+/* BOX UTAMA */
+.tentang-box {
+  max-width: 750px;
+  padding: 35px;
+  border-radius: 20px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.5),
+    0 0 25px rgba(255, 79, 163, 0.2);
+
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* HOVER */
+.tentang-box:hover {
+  transform: translateY(-6px);
+  box-shadow:
+    0 15px 50px rgba(0,0,0,0.6),
+    0 0 35px rgba(255, 79, 163, 0.35);
+}
+
+/* JUDUL */
+.tentang-box h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 15px;
+
+  text-shadow:
+    0 0 10px rgba(255,79,163,0.7),
+    0 0 20px rgba(107,76,255,0.5);
+}
+
+/* GARIS */
+.tentang-box h2::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 3px;
+  margin: 10px auto;
+
+  background: linear-gradient(90deg, #ff4fa3, #6b4cff);
+  border-radius: 10px;
+}
+
+/* PARAGRAF */
+.tentang-box p {
+  color: rgba(255,255,255,0.85);
+  line-height: 1.7;
+  font-size: 15.5px;
+}
+
+/* HIGHLIGHT FITUR */
+.tentang-highlight {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.tentang-highlight span {
+  background: rgba(255,255,255,0.1);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow: 0 0 10px rgba(255,79,163,0.2);
+}
+
+/* Input */
+.input-group {
+  margin: 8px 0;
+  text-align: left;
+}
+
+.input-group input {
+  width: 95%;
+  padding: 8px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.input-group input:focus {
+  border-color: #ff66b2;
+box-shadow: 0 0 8px rgba(255, 120, 180, 0.5);  outline: none;
+}
+
+/* Nominal Options */
+.nominal-options {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.nominal-options {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.nominal-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,102,178,0.4);
+  border-radius: 10px;
+  padding: 10px;
+  transition: 0.3s;
+  color: white;
+}
+
+/* efek hover neon */
+.nominal-card:hover {
+  background: linear-gradient(135deg, #ff4fa3, #6b4cff);
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 79, 163, 0.6);
+}
+
+.nominal-card span {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #e91e63;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-left: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+}
+
+button, .btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+/* Search */
+.search-form {
+  display: flex;
+  align-items: center;
+}
+
+.search-form input {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+}
+
+.search-form button {
+  margin-left: 5px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  background: #ff66cc;
+  color: white;
+  cursor: pointer;
+}
+
+.search-bar {
+  min-width: 100px;
+  max-width: 250px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  transition: width 0.3s ease;
+  outline: none;
+}
+
+.search-bar:focus {
+  width: 250px;
+  box-shadow: 0 0 8px #ff66b2;
+  border-color: #ff66b2;
+}
+
+/* Cart Link */
+
+.cart-link {
+  position: relative;
+}
+
+#cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 7px;
+  border-radius: 50%;
+}

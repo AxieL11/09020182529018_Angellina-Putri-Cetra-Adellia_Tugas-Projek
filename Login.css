@@ -1,0 +1,171 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+
+  background: radial-gradient(circle at top left, #2a2a40, #12121c);
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* BOX LOGIN */
+.login-box {
+  position: relative;
+
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(20px);
+
+  padding: 35px 30px;
+  border-radius: 20px;
+  width: 320px;
+
+  color: white;
+  text-align: center;
+
+  border: 1px solid rgba(255,255,255,0.1);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.4),
+    inset 0 1px 0 rgba(255,255,255,0.1);
+
+  transition: 0.3s;
+  transform: scale(0.8) translateY(20px);
+  opacity: 0;
+
+  animation: popup 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* animasi */
+@keyframes popup {
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes inputFade {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* efek glow halus */
+
+.login-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+
+  background: linear-gradient(135deg, #00e0ff, #7b61ff);
+  opacity: 0.08;
+
+  z-index: -1;
+}
+
+/* JUDUL */
+.login-box h2 {
+  margin-bottom: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* INPUT */
+.login-box input {
+  width: 70%;
+  padding: 12px;
+
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+
+  background: rgba(255,255,255,0.05);
+  color: white;
+
+  transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  animation: inputFade 0.6s ease;
+}
+
+/* 🔥 saat diklik */
+.login-box input:focus {
+  width: 90%;
+  transform: scale(1.05);
+
+  border-color: #00e0ff;
+  box-shadow: 0 0 12px rgba(0,224,255,0.4);
+}
+
+/* 🔥 tetap besar setelah diisi */
+.login-box input:not(:placeholder-shown) {
+  width: 90%;
+  transform: scale(1.05);
+}
+
+/* BUTTON */
+.login-box button {
+  width: 100%;
+  padding: 12px;
+
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, #00e0ff, #7b61ff);
+  color: white;
+
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+/* hover */
+.login-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,224,255,0.3);
+}
+
+/* error */
+.error {
+  color: #ff6b6b;
+  font-size: 13px;
+  margin-top: 8px;
+  display: none;
+}
+
+.login-box::after {
+  content: "WELCOME";
+
+  position: absolute;
+  top: 12px;
+  right: -40px;
+
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+
+  color: #fff;
+
+  padding: 4px 35px;
+  font-size: 11px;
+
+  transform: rotate(45deg);
+
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  pointer-events: none; /* biar gak ganggu klik */
+}
